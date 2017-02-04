@@ -20,7 +20,7 @@
 #define PRODUCT_ID      0xCAFE
 #define DEVICE_VER      0x0104
 #define MANUFACTURER    q.m.k
-#define PRODUCT         Noe\'s HHKB mod
-#define DESCRIPTION     Noe\'s q.m.k keyboard firmware for HHKB
+#define PRODUCT         Noe HHKB mod
+#define DESCRIPTION     Noe q.m.k keyboard firmware for HHKB
 
 #endif
