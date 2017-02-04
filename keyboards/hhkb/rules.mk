@@ -50,10 +50,10 @@ OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 #   Atmel DFU loader 4096
 #   LUFA bootloader  4096
 #   USBaspLoader     2048
-#OPT_DEFS += -DBOOTLOADER_SIZE=4096
+OPT_DEFS += -DBOOTLOADER_SIZE=4096
 
 # as per original hasu settings
-OPT_DEFS += -DBOOTLOADER_SIZE=512
+# OPT_DEFS += -DBOOTLOADER_SIZE=512
 
 # Build Options
 #   comment out to disable the options.
@@ -66,7 +66,7 @@ COMMAND_ENABLE ?= yes   # Commands for debug and configuration
 CUSTOM_MATRIX ?= yes    # Custom matrix file for the HHKB
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 # SLEEP_LED_ENABLE ?= yes  # Breathing sleep LED during USB suspend
-# NKRO_ENABLE ?= yes       # USB Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
+NKRO_ENABLE ?= yes       # USB Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 # BACKLIGHT_ENABLE ?= yes  # Enable keyboard backlight functionality
 # MIDI_ENABLE ?= yes       # MIDI controls
 # UNICODE_ENABLE ?= yes    # Unicode
