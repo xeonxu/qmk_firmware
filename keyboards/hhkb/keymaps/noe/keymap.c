@@ -8,6 +8,7 @@
 enum keymap_layout {
     BASE = 0,
     PSEUDO_US,
+    IOS,
     DVORAK,
     TENKEY,
     MOUSE,
@@ -34,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KEYMAP(KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS, KC_GRV, \
                KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSPC, \
                KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_ENT, \
-         OSM(MOD_LSFT),KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_FN0, \
+         KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_FN0, \
                                KC_LALT,KC_FN1,                KC_FN3,                 KC_RGUI,KC_RALT),
 
     /* Layer 1: Pseudo US Layout Layer */
@@ -42,10 +43,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KEYMAP(KC_ESC, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, \
                KC_TAB, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_BSPC, \
                KC_LCTL,KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_ENT, \
-         OSM(MOD_LSFT),KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_RSFT,KC_FN0, \
+         KC_LSFT,KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_RSFT,KC_FN0, \
                                KC_FN4,KC_FN1,                 KC_FN3,                  KC_RGUI,KC_FN5),
 
-    /* Layer 2: Dvorak Layer
+    /* Layer 2: iOS Layer
+     * ,-----------------------------------------------------------------------------------------.
+     * | Hom |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |  \  |  `  |
+     * |-----------------------------------------------------------------------------------------|
+     * |  Tab   |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |  BSp   |
+     * |-----------------------------------------------------------------------------------------|
+     * | Control  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |   Enter    |
+     * |-----------------------------------------------------------------------------------------|
+     * |    Shift    |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |  Shift  | Fn0 |
+     * `-----------------------------------------------------------------------------------------'
+     *           |LAlt |  LGui  |               SpaceFN             |  RGui  |RAlt |
+     *           `-----------------------------------------------------------------'
+     */
+    [IOS] =
+    KEYMAP(LCTL(LALT(KC_H)), KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS, KC_GRV, \
+               KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSPC, \
+               KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_ENT, \
+         KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_FN0, \
+                               KC_LALT,KC_FN1,                KC_FN3,                 KC_RGUI,KC_RALT),
+
+    /* Layer 3: Dvorak Layer
      * ,-----------------------------------------------------------------------------------------.
      * | Esc |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  [  |  ]  |  \  |  `  |
      * |-----------------------------------------------------------------------------------------|
@@ -65,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_LSFT,KC_SCLN,KC_Q,   KC_J,   KC_K,   KC_X,   KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,   KC_RSFT,KC_FN0, \
                                KC_LALT,KC_FN1,                KC_FN3,                 KC_RGUI,KC_RALT),
 
-    /* Layer 3: Mouse layer
+    /* Layer 4: Mouse layer
      * ,-----------------------------------------------------------------------------------------.
      * | Esc | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 |     |     |
      * |-----------------------------------------------------------------------------------------|
@@ -120,7 +141,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [HHKB] =
         KEYMAP(KC_PWR, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL, \
-               KC_CAPS,KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,KC_TRNS,KC_PSCR,KC_SLCK,KC_PAUS,KC_UP,  KC_TRNS,KC_BSPC, \
+               LGUI(KC_TAB),KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,KC_TRNS,KC_PSCR,KC_SLCK,KC_PAUS,KC_UP,  KC_TRNS,KC_BSPC, \
                KC_TRNS,KC_VOLD,KC_VOLU,KC_MUTE,KC_TRNS,KC_TRNS,KC_PAST,KC_PSLS,KC_HOME,KC_PGUP,KC_LEFT,KC_RGHT,KC_PENT, \
                KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_PPLS,KC_PMNS,KC_END, KC_PGDN,KC_DOWN,KC_TRNS,KC_TRNS, \
                                KC_TRNS,KC_TRNS,                KC_TRNS,                KC_TRNS,KC_TRNS),
@@ -129,7 +150,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------------------------------------.
      * | Pwr | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | Ins | Del |
      * |-----------------------------------------------------------------------------------------|
-     * |  Caps  | Fn6 | Fn7 | Fn8 | Fn9 | Fn10 |     |     | Psc | Slk | Pus | Up  |     |  BSp  |
+     * |  Caps  | Fn6 | Fn7 | Fn8 | Fn9 | Fn10 | Fn11 |    | Psc | Slk | Pus | Up  |     |  BSp  |
      * |-----------------------------------------------------------------------------------------|
      * |          | VoD | VoU | Mut |     |     |  *  |  /  | Hom | PgU | Lef | Rig |   Enter    |
      * |-----------------------------------------------------------------------------------------|
@@ -140,7 +161,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [HHKB_EXT] =
     KEYMAP(KC_PWR, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL,
-	   KC_CAPS,KC_FN6,KC_FN7,KC_FN8,KC_FN9,KC_FN10,KC_TRNS,KC_TRNS,KC_PSCR,KC_SLCK,KC_PAUS,KC_UP,  KC_TRNS,     KC_TRNS,
+	   KC_CAPS,KC_FN6,KC_FN7,KC_FN8,KC_FN9,KC_FN10,KC_FN11,KC_TRNS,KC_PSCR,KC_SLCK,KC_PAUS,KC_UP,  KC_TRNS,     KC_TRNS,
 	   KC_TRNS,KC_VOLD,KC_VOLU,KC_MUTE,KC_F20,KC_TRNS,KC_PAST,KC_PSLS,KC_HOME,KC_PGUP,KC_LEFT,KC_RGHT,          KC_PENT,
 	   KC_TRNS,     KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_PPLS,KC_PMNS,KC_END, KC_PGDN,KC_DOWN,     KC_TRNS, KC_TRNS,
 	   KC_TRNS,KC_TRNS,               KC_TRNS,                    KC_TRNS,KC_TRNS),
@@ -192,10 +213,11 @@ const uint16_t PROGMEM fn_actions[] = {
     [2]  = ACTION_FUNCTION(PSEUDO_US_FUNCTION),
     [3]  = ACTION_LAYER_TAP_KEY(MOUSE, KC_SPACE),
     [4]  = ACTION_MODS_TAP_KEY(MOD_LALT, KC_MHEN),
-    [5]  = ACTION_MODS_TAP_KEY(MOD_RALT, KC_KANA),
+    [5]  = ACTION_MODS_TAP_KEY(MOD_RALT, KC_HENK),
     [6]  = ACTION_DEFAULT_LAYER_SET(BASE),
-    [7]  = ACTION_DEFAULT_LAYER_SET(PSEUDO_US),
-    [8]  = ACTION_DEFAULT_LAYER_SET(MOUSE),
-    [9]  = ACTION_DEFAULT_LAYER_SET(TENKEY),
-    [10] = ACTION_DEFAULT_LAYER_SET(DVORAK),
+    [7]  = ACTION_DEFAULT_LAYER_SET(IOS),
+    [8]  = ACTION_DEFAULT_LAYER_SET(PSEUDO_US),
+    [9]  = ACTION_DEFAULT_LAYER_SET(MOUSE),
+    [10]  = ACTION_DEFAULT_LAYER_SET(TENKEY),
+    [11] = ACTION_DEFAULT_LAYER_SET(DVORAK),
 };
