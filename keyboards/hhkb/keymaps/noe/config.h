@@ -12,6 +12,9 @@
 /* bootmagic salt key */
 #define BOOTMAGIC_KEY_SALT              KC_Z
 
+#define NO_DEBUG
+#define USER_PRINT
+
 #undef VENDOR_ID
 #undef PRODUCT_ID
 #undef DEVICE_VER
