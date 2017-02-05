@@ -9,6 +9,9 @@
 #define ONESHOT_TAP_TOGGLE 2
 #define ONESHOT_TIMEOUT 2000
 
+/* bootmagic salt key */
+#define BOOTMAGIC_KEY_SALT              KC_Z
+
 #undef VENDOR_ID
 #undef PRODUCT_ID
 #undef DEVICE_VER
