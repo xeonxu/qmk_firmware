@@ -129,22 +129,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Layer 6: Tenkey layer
      * ,-----------------------------------------------------------------------------------------.
-     * | Esc |     |     |     |     |     |     |     |     |     |  /  |  *  |  -  |     |     |
+     * | Esc |     |     |     |     |     |     |     |     |  /  |  *  |  -  |     |     |     |
      * |-----------------------------------------------------------------------------------------|
-     * |        |     |     |     |     |     |     |     |     |  7  |  8  |  9  |  +  |   BSp  |
+     * |        |     |     |     |     |     |     |     |  7  |  8  |  9  |  +  |  +  |   BSp  |
      * |-----------------------------------------------------------------------------------------|
-     * |          |     |     |     |     |     |     |     |     |  4  |  5  |  6  |   Enter    |
+     * |          |     |     |     |     |     |     |     |  4  |  5  |  6  | Ent |   Enter    |
      * |-----------------------------------------------------------------------------------------|
-     * |             |     |     |     |     |     |     |     |  1  |  2  |  3  |    +    | Fn0 |
+     * |             |     |     |     |     |     |     |     |  1  |  2  |  3  |         | Fn0 |
      * `-----------------------------------------------------------------------------------------'
      *           |     |  Fn1   |              Fn3                  |   0    |  .  |
      *           `-----------------------------------------------------------------'
      */
     [TENKEY] =
-        KEYMAP(KC_ESC, KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_PSLS,KC_PAST,KC_PMNS,KC_NO,  KC_NO, \
-               KC_TRNS,KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_KP_7,KC_KP_8,KC_KP_9,KC_PPLS,KC_BSPC, \
-               KC_TRNS,KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_KP_4,KC_KP_5,KC_KP_6,KC_PENT, \
-               KC_TRNS,KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_KP_1,KC_KP_2,KC_KP_3,KC_PPLS,KC_FN0, \
+        KEYMAP(KC_ESC, KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_PSLS,KC_PAST,KC_PMNS, KC_NO, KC_NO,  KC_NO, \
+               KC_TRNS,KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_KP_7,KC_KP_8,KC_KP_9, KC_PPLS,  KC_PPLS,KC_BSPC, \
+               KC_TRNS,KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_KP_4, KC_KP_5, KC_KP_6,  KC_PENT,  KC_PENT, \
+               KC_TRNS,KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_KP_1,KC_KP_2,KC_KP_3,KC_TRNS,KC_FN0, \
                                KC_TRNS,KC_FN1,                KC_FN3,                 KC_KP_0,KC_PDOT),
 
     /* Layer 6: HHKB mode (HHKB Fn)
