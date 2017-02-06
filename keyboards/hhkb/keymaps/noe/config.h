@@ -8,7 +8,7 @@
 
 #define ONESHOT_TAP_TOGGLE 2
 #define ONESHOT_TIMEOUT 2000
-
+#define DISABLE_SPACE_CADET_ROLLOVER
 /* bootmagic salt key */
 // #define BOOTMAGIC_KEY_SALT              KC_Z
 
