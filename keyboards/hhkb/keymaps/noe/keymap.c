@@ -1,3 +1,7 @@
+/*  -*-  eval: (turn-on-orgtbl); -*-
+ * Noe HHKB Layout
+ */
+
 /*
  * HHKB Pro 2 US Layout for Noe
  */
@@ -149,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Layer 6: HHKB mode (HHKB Fn)
      * ,-----------------------------------------------------------------------------------------.
-     * | Pwr | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | Ins | Del |
+     * |Power| F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | Ins | Del |
      * |-----------------------------------------------------------------------------------------|
      * |  Caps  |     |     |     |     |     |     |     | Psc | Slk | Pus | Up  |     |  BSp   |
      * |-----------------------------------------------------------------------------------------|
@@ -161,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *           `-----------------------------------------------------------------'
      */
     [HHKB] =
-        KEYMAP(KC_PWR, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL, \
+        KEYMAP(KC_POWER, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL, \
                KC_CAPS,KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,KC_TRNS,KC_PSCR,KC_SLCK,KC_PAUS,KC_UP,  KC_TRNS,KC_BSPC, \
                KC_TRNS,KC_VOLD,KC_VOLU,KC_MUTE,KC_TRNS,KC_TRNS,KC_PAST,KC_PSLS,KC_HOME,KC_PGUP,KC_LEFT,KC_RGHT,KC_PENT, \
                KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_PPLS,KC_PMNS,KC_END, KC_PGDN,KC_DOWN,KC_TRNS,KC_TRNS, \
@@ -169,7 +173,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Layer 7: HHKB mode (HHKB Fn)
      * ,-----------------------------------------------------------------------------------------.
-     * |Power| F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | Ins | Del |
+     * | Pwr | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | Ins | Del |
      * |-----------------------------------------------------------------------------------------|
      * |  Caps  | Fn6 | Fn7 | Fn8 | Fn9 | Fn10 | Fn11 |    | Psc | Slk | Pus | Up  |     |  BSp  |
      * |-----------------------------------------------------------------------------------------|
@@ -181,7 +185,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *           `-----------------------------------------------------------------'
      */
     [HHKB_EXT] =
-    KEYMAP(KC_POWER, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL,
+    KEYMAP(KC_PWR, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL,
 	   KC_CAPS,KC_FN6,KC_FN7,KC_FN8,KC_FN9,KC_FN10,KC_FN11,KC_TRNS,KC_PSCR,KC_SLCK,KC_PAUS,KC_UP,  KC_TRNS,     KC_TRNS,
 	   KC_TRNS,KC_VOLD,KC_VOLU,KC_MUTE,KC_TRNS,KC_TRNS,KC_PAST,KC_PSLS,KC_HOME,KC_PGUP,KC_LEFT,KC_RGHT,          KC_PENT,
 	   KC_TRNS,     KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_PPLS,KC_PMNS,KC_END, KC_PGDN,KC_DOWN,     KC_TRNS, KC_TRNS,
