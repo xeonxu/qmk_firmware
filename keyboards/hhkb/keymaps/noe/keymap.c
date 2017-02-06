@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KEYMAP(KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS, KC_GRV, \
                KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSPC, \
                KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_ENT, \
-	       KC_LSPO,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSPC,KC_FN0, \
+	       KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_FN0, \
                                KC_LALT,KC_FN1,                KC_SPC,                 KC_RGUI,KC_RALT),
 
     /* Layer 1: Default Layer
@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSPC, \
                KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_FN12, \
 	       KC_LSPO,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   MEH_T(KC_COMM),LCAG_T(KC_DOT), ALL_T(KC_SLSH),KC_RSPC,KC_FN0, \
-                               KC_LALT,KC_FN1,                KC_FN3,                 KC_RGUI,KC_RALT),
+                               KC_FN4,KC_FN1,                KC_FN3,                 KC_RGUI,KC_FN5),
 
     /* Layer 2: Pseudo US Layout Layer */
     [PSEUDO_US] =
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSPC, \
                KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_FN12, \
 	       KC_LSPO,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSPC,KC_FN0, \
-                               KC_LALT,KC_FN1,                KC_FN3,                 KC_RGUI,KC_RALT),
+                               KC_FN4,KC_FN1,                KC_FN3,                 KC_RGUI,KC_FN5),
 
     /* Layer 4: Dvorak Layer
      * ,-----------------------------------------------------------------------------------------.
@@ -229,11 +229,11 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
  * Fn action definition
  */
 const uint16_t PROGMEM fn_actions[] = {
-    [0]  = ACTION_LAYER_MOMENTARY(HHKB_EXT),
-    [1]  = ACTION_LAYER_MOMENTARY(HHKB),
+    [0]  = ACTION_LAYER_TAP_KEY(HHKB_EXT, KC_KANA),
+    [1]  = ACTION_LAYER_TAP_KEY(HHKB, KC_MHEN),
     [2]  = ACTION_FUNCTION(PSEUDO_US_FUNCTION),
     [3]  = ACTION_LAYER_TAP_KEY(MOUSE, KC_SPACE),
-    [4]  = ACTION_MODS_TAP_KEY(MOD_LALT, KC_MHEN),
+    [4]  = ACTION_MODS_TAP_KEY(MOD_LALT, KC_ZKHK),
     [5]  = ACTION_MODS_TAP_KEY(MOD_RALT, KC_HENK),
     [6]  = ACTION_DEFAULT_LAYER_SET(BASE),
     [7]  = ACTION_DEFAULT_LAYER_SET(IOS),
