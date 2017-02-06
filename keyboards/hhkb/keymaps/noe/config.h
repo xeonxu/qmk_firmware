@@ -10,7 +10,7 @@
 #define ONESHOT_TIMEOUT 2000
 
 /* bootmagic salt key */
-#define BOOTMAGIC_KEY_SALT              KC_Z
+// #define BOOTMAGIC_KEY_SALT              KC_Z
 
 #define NO_DEBUG
 #define USER_PRINT
