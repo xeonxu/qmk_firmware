@@ -19,6 +19,7 @@ enum keymap_layout {
     MOUSE,
     HHKB,
     HHKB_EXT,
+    HHKB_IOS,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -85,11 +86,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *           `-----------------------------------------------------------------'
      */
     [IOS] =
-    KEYMAP(LCTL(LALT(KC_H)), KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS, KC_GRV, \
+    KEYMAP(KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS, KC_GRV, \
                KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSPC, \
                KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_FN12, \
 	       KC_LSPO,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSPC,KC_FN0, \
-                               KC_FN4,KC_FN1,                KC_FN3,                 KC_RGUI,KC_FN5),
+                               KC_FN4,KC_FN13,                KC_FN3,                 KC_RGUI,KC_FN5),
 
     /* Layer 4: Dvorak Layer
      * ,-----------------------------------------------------------------------------------------.
@@ -171,7 +172,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_PPLS,KC_PMNS,KC_END, KC_PGDN,KC_DOWN,KC_TRNS,KC_TRNS, \
                                KC_TRNS,KC_TRNS,                KC_TRNS,                KC_TRNS,KC_TRNS),
 
-    /* Layer 7: HHKB mode (HHKB Fn)
+    /* Layer 7: HHKB Ext mode (HHKB Fn)
      * ,-----------------------------------------------------------------------------------------.
      * | Pwr | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | Ins | Del |
      * |-----------------------------------------------------------------------------------------|
@@ -187,6 +188,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [HHKB_EXT] =
     KEYMAP(KC_PWR, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL,
 	   KC_CAPS,KC_FN6,KC_FN7,KC_FN8,KC_FN9,KC_FN10,KC_FN11,KC_TRNS,KC_PSCR,KC_SLCK,KC_PAUS,KC_UP,  KC_TRNS,     KC_TRNS,
+	   KC_TRNS,KC_VOLD,KC_VOLU,KC_MUTE,KC_TRNS,KC_TRNS,KC_PAST,KC_PSLS,KC_HOME,KC_PGUP,KC_LEFT,KC_RGHT,          KC_PENT,
+	   KC_TRNS,     KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_PPLS,KC_PMNS,KC_END, KC_PGDN,KC_DOWN,     KC_TRNS, KC_TRNS,
+	   KC_TRNS,KC_TRNS,               KC_TRNS,                    KC_TRNS,KC_TRNS),
+
+    /* Layer 8: HHKB iOS mode (HHKB Fn)
+     * ,-----------------------------------------------------------------------------------------.
+     * | Hom | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | Ins | Del |
+     * |-----------------------------------------------------------------------------------------|
+     * |  Caps  | Fn6 | Fn7 | Fn8 | Fn9 | Fn10 | Fn11 |    | Psc | Slk | Pus | Up  |     |  BSp  |
+     * |-----------------------------------------------------------------------------------------|
+     * |          | VoD | VoU | Mut |     |     |  *  |  /  | Hom | PgU | Lef | Rig |   Enter    |
+     * |-----------------------------------------------------------------------------------------|
+     * |             |     |     |     |     |     |  +  |  -  | End | PgD | Dow |         |     |
+     * `-----------------------------------------------------------------------------------------'
+     *           |     |        |                                   |        |     |
+     *           `-----------------------------------------------------------------'
+     */
+    [HHKB_IOS] =
+    KEYMAP(LCTL(LALT(KC_H)), KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL,
+	   LCTL(LALT(KC_H)),KC_FN6,KC_FN7,KC_FN8,KC_FN9,KC_FN10,KC_FN11,KC_TRNS,KC_PSCR,KC_SLCK,KC_PAUS,KC_UP,  KC_TRNS,     KC_TRNS,
 	   KC_TRNS,KC_VOLD,KC_VOLU,KC_MUTE,KC_TRNS,KC_TRNS,KC_PAST,KC_PSLS,KC_HOME,KC_PGUP,KC_LEFT,KC_RGHT,          KC_PENT,
 	   KC_TRNS,     KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_PPLS,KC_PMNS,KC_END, KC_PGDN,KC_DOWN,     KC_TRNS, KC_TRNS,
 	   KC_TRNS,KC_TRNS,               KC_TRNS,                    KC_TRNS,KC_TRNS),
@@ -245,5 +266,6 @@ const uint16_t PROGMEM fn_actions[] = {
     [9]  = ACTION_DEFAULT_LAYER_SET(MOUSE),
     [10] = ACTION_DEFAULT_LAYER_SET(TENKEY),
     [11] = ACTION_DEFAULT_LAYER_SET(DVORAK),
-    [12] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT)
+    [12] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),
+    [13] = ACTION_LAYER_TAP_KEY(HHKB_IOS, KC_MHEN),
 };
