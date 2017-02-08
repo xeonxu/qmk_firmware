@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KEYMAP(KC_ESC, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, \
                KC_TAB, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_BSPC, \
                KC_LCTL,KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN12, \
-	       KC_LSPO,KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, MEH_T(KC_FN2), LCAG_T(KC_FN2), ALL_T(KC_FN2), KC_RSPC,KC_FN0, \
+	       KC_LSFT,KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_FN2, KC_RSFT,KC_FN0, \
                                KC_FN4,KC_FN1,                 KC_FN3,                  KC_RGUI,KC_FN5),
 
     /* Layer 3: iOS Layer
@@ -245,7 +245,7 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
 
     switch (id) {
         case PSEUDO_US_FUNCTION:
-            action_pseudo_lut(record, BASE, keymap_jis2us);
+            action_pseudo_lut(record, SAFE, keymap_jis2us);
             break;
     }
 }
